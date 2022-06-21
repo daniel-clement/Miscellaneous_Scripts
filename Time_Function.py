@@ -25,17 +25,24 @@ executionTimeSec = (time.time() - startTime)
 
 # define function to determine how long the script took to run, and generate the required print statement
 def print_execution_time(executionTimeSec):
+    # print the time in seconds
     if executionTimeSec < 60:
         execTimeSecRound = round(executionTimeSec, 2)
         print("Process completed in {} seconds".format(execTimeSecRound))
+        
+    # print the time in minutes
     elif 60 <= executionTimeSec < 3600:
         execTimeMin = executionTimeSec / 60
         execTimeMinRound = round(execTimeMin, 2)
         print("Process completed in {} minutes".format(execTimeMinRound))
+        
+    # print the time in hours
     elif 3600 <= executionTimeSec < 86400:
         execTimeHours = executionTimeSec / 3600
         execTimeHoursRound = round(execTimeHours, 2)
         print("Process completed in {} hours".format(execTimeHoursRound))
+        
+    # print the time in days
     elif executionTimeSec >= 86400:
         execTimeDays = executionTimeSec / 86400
         execTimeDaysRound = round(execTimeDays, 2)
